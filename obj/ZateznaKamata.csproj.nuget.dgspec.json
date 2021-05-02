@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Home-PC\\githubProjects\\ZateznaKamata\\ZateznaKamata.csproj": {}
+    "C:\\Users\\Home-PC\\githubProjects\\defaultIncomeCalculator\\ZateznaKamata.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Home-PC\\githubProjects\\ZateznaKamata\\ZateznaKamata.csproj": {
+    "C:\\Users\\Home-PC\\githubProjects\\defaultIncomeCalculator\\ZateznaKamata.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Home-PC\\githubProjects\\ZateznaKamata\\ZateznaKamata.csproj",
+        "projectUniqueName": "C:\\Users\\Home-PC\\githubProjects\\defaultIncomeCalculator\\ZateznaKamata.csproj",
         "projectName": "ZateznaKamata",
-        "projectPath": "C:\\Users\\Home-PC\\githubProjects\\ZateznaKamata\\ZateznaKamata.csproj",
+        "projectPath": "C:\\Users\\Home-PC\\githubProjects\\defaultIncomeCalculator\\ZateznaKamata.csproj",
         "packagesPath": "C:\\Users\\Home-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Home-PC\\githubProjects\\ZateznaKamata\\obj\\",
+        "outputPath": "C:\\Users\\Home-PC\\githubProjects\\defaultIncomeCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Home-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

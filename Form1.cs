@@ -21,6 +21,7 @@ namespace ZateznaKamataGUI
         KamatneStopeValutePeriodi stope = null;
         string dugovanjaLolakacija;
         List<Dugovanje> listaDugovanja = new List<Dugovanje>();
+        List<string[]> prikazListeDugovanja = new List<string[]>();
         decimal svaDugovanja = 0;
         public Form1()
         {
@@ -35,17 +36,17 @@ namespace ZateznaKamataGUI
                 comboBox1.Items.Add(valuta.Valuta);
             }
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
             dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].Name = "Datum";
             dataGridView1.Columns[1].Name = "Broj dana";
             dataGridView1.Columns[2].Name = "Kamatna Stopa";
             dataGridView1.Columns[3].Name = "Glavnica";
             dataGridView1.Columns[4].Name = "Kamata";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
             bool nadjeno = false;
             foreach(Dugovanje dugovanje in listaDugovanja)
             {
@@ -70,8 +71,54 @@ namespace ZateznaKamataGUI
             }
 
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            prikazListeDugovanja.Clear();
+            dataGridView1.Rows.Clear();
+            dataGridView1.ColumnCount = 6;
+            dataGridView1.Columns[0].Name = "Šifra";
+            dataGridView1.Columns[1].Name = "Datum";
+            dataGridView1.Columns[2].Name = "Broj dana";
+            dataGridView1.Columns[3].Name = "Glavnica";
+            dataGridView1.Columns[4].Name = "Kamata";
+            dataGridView1.Columns[5].Name = "Celokupno Dugovanje";
+            try
+            {
+                listaDugovanja = Dugovanje.ucitavanjeDugovanja(dugovanjaLolakacija);
+                button1.Enabled = true;
+                prikazSvihDugovanja.Enabled = true;
+                foreach (KamatneStopeValutePeriodi x in valuteStope)
+                {
+                    Debug.WriteLine(x);
+                    if (x.Valuta == comboBox1.Text)
+                    {
+                        Debug.WriteLine("Nadjeno");
+                        stope = x;
+                        break;
+                    }
+                }
+                foreach (Dugovanje dugovanje in listaDugovanja)
+                {
+                    decimal dug = dugovanje.DugovanjeNaDanUplate(stope, false);
+                    svaDugovanja += dug;
+                    prikazListeDugovanja.Add(new string[] { dugovanje.SifraDugovanja, dugovanje.Rok.ToString(), (dugovanje.DanUplate - dugovanje.Rok).ToString(), dugovanje.Glavnica.ToString(), (dug - dugovanje.Glavnica).ToString(), dug.ToString() });
+                }
+                label2.Text = $"Sva dugovanja: {svaDugovanja}";
+                svaDugovanja = 0;
+                foreach (string[] red in prikazListeDugovanja)
+                {
+                    dataGridView1.Rows.Add(red);
+                }
+                Dugovanje.detalji = new List<string[]>();
+            }
+            catch (SecurityException ex)
+            {
+                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
+                $"Details:\n\n{ex.StackTrace}");
+            }
+        }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void odabirFajla_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -89,33 +136,21 @@ namespace ZateznaKamataGUI
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void prikazSvihDugovanja_Click(object sender, EventArgs e)
         {
-            try
+            dataGridView1.Rows.Clear();
+            dataGridView1.ColumnCount = 6;
+            dataGridView1.Columns[0].Name = "Šifra";
+            dataGridView1.Columns[1].Name = "Datum";
+            dataGridView1.Columns[2].Name = "Broj dana";
+            dataGridView1.Columns[3].Name = "Glavnica";
+            dataGridView1.Columns[4].Name = "Kamata";
+            dataGridView1.Columns[5].Name = "Celokupno Dugovanje";
+            foreach (string[] red in prikazListeDugovanja)
             {
-                listaDugovanja = Dugovanje.ucitavanjeDugovanja(dugovanjaLolakacija);
-                button1.Enabled = true;
-                foreach (KamatneStopeValutePeriodi x in valuteStope)
-                {
-                    Debug.WriteLine(x);
-                    if (x.Valuta == comboBox1.Text)
-                    {
-                        Debug.WriteLine("Nadjeno");
-                        stope = x;
-                        break;
-                    }
-                }
-                foreach (Dugovanje dugovanje in listaDugovanja)
-                {
-                    svaDugovanja += dugovanje.DugovanjeNaDanUplate(stope, false);
-                    label2.Text = $"Sva dugovanja: {svaDugovanja}";
-                }
+                dataGridView1.Rows.Add(red);
             }
-            catch (SecurityException ex)
-            {
-                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                $"Details:\n\n{ex.StackTrace}");
-            }
+            Dugovanje.detalji = new List<string[]>();
         }
     }
 }

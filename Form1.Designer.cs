@@ -33,7 +33,7 @@ namespace ZateznaKamataGUI
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button2 = new System.Windows.Forms.Button();
+            this.odabirFajla = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@ namespace ZateznaKamataGUI
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.prikazSvihDugovanja = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,9 +70,9 @@ namespace ZateznaKamataGUI
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(160, 97);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 29);
+            this.button1.Size = new System.Drawing.Size(134, 29);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Prikaz";
+            this.button1.Text = "Prikaz po zadatoj šifri";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -80,15 +81,15 @@ namespace ZateznaKamataGUI
             this.openFileDialog1.Filter = "Comma-separated values (*.csv)|*.csv";
             this.openFileDialog1.Title = "Open csv file";
             // 
-            // button2
+            // odabirFajla
             // 
-            this.button2.Location = new System.Drawing.Point(12, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Odabir fajla";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.odabirFajla.Location = new System.Drawing.Point(12, 12);
+            this.odabirFajla.Name = "odabirFajla";
+            this.odabirFajla.Size = new System.Drawing.Size(127, 29);
+            this.odabirFajla.TabIndex = 3;
+            this.odabirFajla.Text = "Odabir fajla";
+            this.odabirFajla.UseVisualStyleBackColor = true;
+            this.odabirFajla.Click += new System.EventHandler(this.odabirFajla_Click);
             // 
             // label1
             // 
@@ -158,15 +159,26 @@ namespace ZateznaKamataGUI
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(278, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 15);
+            this.label6.Size = new System.Drawing.Size(0, 15);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Lokacija fajla: ";
+            // 
+            // prikazSvihDugovanja
+            // 
+            this.prikazSvihDugovanja.Enabled = false;
+            this.prikazSvihDugovanja.Location = new System.Drawing.Point(533, 97);
+            this.prikazSvihDugovanja.Name = "prikazSvihDugovanja";
+            this.prikazSvihDugovanja.Size = new System.Drawing.Size(131, 29);
+            this.prikazSvihDugovanja.TabIndex = 12;
+            this.prikazSvihDugovanja.Text = "Prikaz svih dugovanja";
+            this.prikazSvihDugovanja.UseVisualStyleBackColor = true;
+            this.prikazSvihDugovanja.Click += new System.EventHandler(this.prikazSvihDugovanja_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 351);
+            this.Controls.Add(this.prikazSvihDugovanja);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
@@ -175,7 +187,7 @@ namespace ZateznaKamataGUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.odabirFajla);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
@@ -193,7 +205,7 @@ namespace ZateznaKamataGUI
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button odabirFajla;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
@@ -202,6 +214,7 @@ namespace ZateznaKamataGUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button prikazSvihDugovanja;
     }
 }
 
