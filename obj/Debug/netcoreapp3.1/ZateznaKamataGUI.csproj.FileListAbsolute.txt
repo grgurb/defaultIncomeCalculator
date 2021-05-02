@@ -1,0 +1,15 @@
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.csprojAssemblyReference.cache
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.Form1.resources
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.csproj.GenerateResource.cache
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.AssemblyInfoInputs.cache
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.AssemblyInfo.cs
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.csproj.CoreCompileInputs.cache
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\bin\Debug\netcoreapp3.1\ZateznaKamataGUI.exe
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\bin\Debug\netcoreapp3.1\ZateznaKamataGUI.deps.json
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\bin\Debug\netcoreapp3.1\ZateznaKamataGUI.runtimeconfig.json
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\bin\Debug\netcoreapp3.1\ZateznaKamataGUI.runtimeconfig.dev.json
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\bin\Debug\netcoreapp3.1\ZateznaKamataGUI.dll
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\bin\Debug\netcoreapp3.1\ZateznaKamataGUI.pdb
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.dll
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.pdb
+C:\Users\Home-PC\source\repos\ZateznaKamataGUI\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.genruntimeconfig.cache
