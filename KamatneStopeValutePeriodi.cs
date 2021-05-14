@@ -18,12 +18,21 @@ namespace RacunanjeZatezneKamateConsole
                 {
                     valuta = fajlStream.ReadLine();
                     string tmp;
+                    int i = 0;
                     try
                     {
                         while((tmp = fajlStream.ReadLine()) != null)
                         {
                             string[] tmpArray = tmp.Split(",");
-                            stope.AddLast(new KamatnaStopa(tmpArray[0], tmpArray[1]));
+                            i++;
+                            if(tmpArray.Length == 2)
+                            {
+                                stope.AddLast(new KamatnaStopa(tmpArray[0], tmpArray[1], fajl, i));
+                            }
+                            else
+                            {
+                                throw new Exception($"Greška u formatiranju fajla {fajl} na redu broj {i}.");
+                            }
                         }
                         DateTime prviUGodini = new DateTime(stope.First.Value.DatumStupanjaNaSnagu.Year + 1, 1, 1);
                         while (DateTime.Compare(prviUGodini, stope.Last.Value.DatumStupanjaNaSnagu) < 0)
@@ -39,16 +48,19 @@ namespace RacunanjeZatezneKamateConsole
                             prviUGodini = prviUGodini.AddYears(1);
                         }
                     }
-                    catch (Exception e)
+                    catch (Exception greska)
                     {
-                        Console.WriteLine(e);
+                        throw greska;
                     }
-                    stope.AddLast(new LinkedListNode<KamatnaStopa>(new KamatnaStopa(new DateTime(2021, 1, 1), stope.Last.Value.Stopa)));
+                    while (stope.Last.Value.DatumStupanjaNaSnagu < DateTime.Now.AddYears(1))
+                    {
+                        stope.AddLast(new KamatnaStopa(new DateTime (stope.Last.Value.DatumStupanjaNaSnagu.Year + 1, 1, 1), stope.Last.Value.Stopa));
+                    }
                 }
             }
             catch (Exception greska)
             {
-                Console.WriteLine(greska);
+                throw greska;
             }
         }
         public string Valuta => valuta;

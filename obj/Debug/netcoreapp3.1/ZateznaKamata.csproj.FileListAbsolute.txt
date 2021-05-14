@@ -1,0 +1,15 @@
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\bin\Debug\netcoreapp3.1\ZateznaKamata.exe
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\bin\Debug\netcoreapp3.1\ZateznaKamata.deps.json
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\bin\Debug\netcoreapp3.1\ZateznaKamata.runtimeconfig.json
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\bin\Debug\netcoreapp3.1\ZateznaKamata.runtimeconfig.dev.json
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\bin\Debug\netcoreapp3.1\ZateznaKamata.dll
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\bin\Debug\netcoreapp3.1\ZateznaKamata.pdb
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.csprojAssemblyReference.cache
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamataGUI.Form1.resources
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.csproj.GenerateResource.cache
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.AssemblyInfoInputs.cache
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.AssemblyInfo.cs
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.csproj.CoreCompileInputs.cache
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.dll
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.pdb
+C:\Users\Home-PC\githubProjects\defaultIncomeCalculator\obj\Debug\netcoreapp3.1\ZateznaKamata.genruntimeconfig.cache

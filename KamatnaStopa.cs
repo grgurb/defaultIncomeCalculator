@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace RacunanjeZatezneKamateConsole
@@ -8,15 +9,15 @@ namespace RacunanjeZatezneKamateConsole
         private readonly DateTime datumStupanjaNaSnagu;
         private readonly decimal stopa;
         private decimal tmpDugovanjeZaPeriod = 0;
-        public KamatnaStopa(string datum, string stopa)
+        public KamatnaStopa(string datum, string stopa, string fajl, int i)
         {
             try {
-                if (!DateTime.TryParseExact(datum, "d.M.yyyy.", CultureInfo.InvariantCulture, DateTimeStyles.None, out datumStupanjaNaSnagu)) throw new ArgumentException("Neispravno unet datum stope zatezne kamate.");
-                if (!Decimal.TryParse(stopa, out this.stopa)) throw new ArgumentException("Neispravno uneta stopa zatezne kamate.");
+                if (!DateTime.TryParseExact(datum, "d.M.yyyy.", CultureInfo.InvariantCulture, DateTimeStyles.None, out datumStupanjaNaSnagu)) throw new ArgumentException($"Neispravno unet datum stope zatezne kamate u fajlu {fajl} na redu {i}.");
+                if (!Decimal.TryParse(stopa, out this.stopa)) throw new ArgumentException($"Neispravno uneta stopa zatezne kamate u fajlu {fajl} na redu {i}.");
             }
             catch(Exception greska)
             {
-                Console.WriteLine(greska);
+                throw greska;
             }
         }
         public KamatnaStopa(DateTime datum, decimal stopa)

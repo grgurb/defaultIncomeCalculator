@@ -77,7 +77,7 @@ namespace RacunanjeZatezneKamateConsole
             Console.WriteLine($"Datum: {prviDanObracunskiPeriod}, broj dana: {brojDanaDocnje}, stopa: {stopa}, glavnica:{glavnica}, kamata:{kamata}");
             if (ispis)
             {
-                detalji.Add(new string[] { prviDanObracunskiPeriod.ToString(), brojDanaDocnje.ToString(), stopa.ToString(), glavnica.ToString(), kamata.ToString() });
+                detalji.Add(new string[] { PomocneFunkcije.Datum(prviDanObracunskiPeriod), brojDanaDocnje.ToString(), stopa.ToString(), glavnica.ToString(), kamata.ToString() });
             }
             return decimal.Round(kamata, 2);
         }
@@ -89,25 +89,26 @@ namespace RacunanjeZatezneKamateConsole
                 using (StreamReader fajlStream = File.OpenText(lokacijaFajl))
                 {
                     string tmp;
-                    try
+                    int i = 0;
+                    while ((tmp = fajlStream.ReadLine()) != null)
                     {
-                        while ((tmp = fajlStream.ReadLine()) != null)
+                        i++;
+                        string[] tmpArray = tmp.Split(",");
+                        if(tmpArray.Length == 4)
                         {
-                            string[] tmpArray = tmp.Split(",");
                             listaDugovanja.Add(new Dugovanje(tmpArray[0], tmpArray[1], tmpArray[2], tmpArray[3]));
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
+                        else
+                        {
+                            throw new Exception($"Greška u formatiranju fajla na redu broj {i}.");
+                        }
                     }
                 }
                 return listaDugovanja;
             }
             catch (Exception greska)
             {
-                Console.WriteLine(greska);
-                return null;
+                throw greska;
             }
         }
     }
